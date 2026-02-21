@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Veloxora Web Services - Landing pages, business websites, e-commerce, and custom web development.">
+    <title>Services | Veloxora Web</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Detailed Services */
+        .detailed-services {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-detail {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 6rem;
+            align-items: center;
+        }
+
+        .service-detail:nth-child(even) {
+            direction: rtl;
+        }
+
+        .service-detail:nth-child(even) > * {
+            direction: ltr;
+        }
+
+        .service-visual {
+            background: var(--gradient-btn);
+            border-radius: 20px;
+            padding: 3rem;
+            color: white;
+            text-align: center;
+            font-size: 4rem;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .service-info h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .service-info > p {
+            color: var(--secondary);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .service-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .service-features li {
+            padding: 0.5rem 0;
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .service-features li::before {
+            content: '✓';
+            color: var(--success);
+            font-weight: 700;
+        }
+
+        /* Pricing Section */
+        .pricing-section {
+            background: var(--white);
+            padding: 6rem 2rem;
+        }
+
+        .pricing-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .pricing-card {
+            background: var(--light);
+            border-radius: 20px;
+            padding: 2.5rem;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .pricing-card.featured {
+            background: var(--dark);
+            color: var(--white);
+            transform: scale(1.05);
+            border-color: var(--primary);
+        }
+
+        .pricing-card:hover {
+            border-color: var(--primary);
+        }
+
+        .pricing-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: 800;
+            margin: 1rem 0;
+            color: var(--primary);
+        }
+
+        .pricing-card.featured .price {
+            color: var(--accent);
+        }
+
+        .price span {
+            font-size: 1rem;
+            color: var(--secondary);
+            font-weight: 400;
+        }
+
+        .pricing-card.featured .price span {
+            color: var(--gray);
+        }
+
+        .features-list {
+            list-style: none;
+            margin: 2rem 0;
+            text-align: left;
+        }
+
+        .features-list li {
+            padding: 0.5rem 0;
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .pricing-card.featured .features-list li {
+            color: var(--gray);
+        }
+
+        .features-list li::before {
+            content: '✓';
+            color: var(--success);
+            font-weight: 700;
+        }
+
+        .timeline {
+            display: inline-block;
+            background: rgba(255,255,255,0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+            color: var(--secondary);
+        }
+
+        .pricing-card.featured .timeline {
+            background: rgba(255,255,255,0.2);
+            color: var(--white);
+        }
+
+        @media (max-width: 768px) {
+            .service-detail {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .service-detail:nth-child(even) {
+                direction: ltr;
+            }
+
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Veloxora Web</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html" class="active">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>Our Services</h1>
+        <p>Transparent pricing, professional results. Choose the package that fits your business needs.</p>
+    </section>
+
+    <!-- Detailed Services -->
+    <section class="detailed-services">
+        <div class="service-detail">
+            <div class="service-visual">🚀</div>
+            <div class="service-info">
+                <h3>Landing Pages</h3>
+                <p>High-converting single-page websites designed to capture leads and drive sales. Perfect for product launches, service businesses, and marketing campaigns.</p>
+                <ul class="service-features">
+                    <li>Single-page design optimized for conversions</li>
+                    <li>Mobile-responsive layout</li>
+                    <li>Contact/lead capture forms</li>
+                    <li>Fast loading (under 2 seconds)</li>
+                    <li>Basic SEO setup</li>
+                    <li>48-hour delivery</li>
+                </ul>
+                <a href="contact.html" class="btn btn-primary">Get Started - $400</a>
+            </div>
+        </div>
+
+        <div class="service-detail">
+            <div class="service-visual">🏢</div>
+            <div class="service-info">
+                <h3>Business Websites</h3>
+                <p>Professional multi-page sites that establish credibility and showcase your services. Ideal for established businesses looking to upgrade their online presence.</p>
+                <ul class="service-features">
+                    <li>Up to 5 custom pages</li>
+                    <li>Custom design (no templates)</li>
+                    <li>Content Management System</li>
+                    <li>Advanced SEO optimization</li>
+                    <li>Speed optimization</li>
+                    <li>Google Analytics setup</li>
+                    <li>2-week delivery</li>
+                </ul>
+                <a href="contact.html" class="btn btn-primary">Get Started - $600</a>
+            </div>
+        </div>
+
+        <div class="service-detail">
+            <div class="service-visual">🛒</div>
+            <div class="service-info">
+                <h3>E-Commerce</h3>
+                <p>Full online stores with secure checkout, inventory management, and payment processing. Start selling online with a professional storefront.</p>
+                <ul class="service-features">
+                    <li>Unlimited product listings</li>
+                    <li>Secure payment processing (Stripe/PayPal)</li>
+                    <li>Inventory management system</li>
+                    <li>User account system</li>
+                    <li>Admin dashboard</li>
+                    <li>Order tracking & notifications</li>
+                    <li>3-4 week delivery</li>
+                </ul>
+                <a href="contact.html" class="btn btn-primary">Contact for Quote</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section">
+        <div class="pricing-container">
+            <div class="section-header">
+                <h2>Packages & Pricing</h2>
+                <p>No hidden fees, no hourly billing. Fixed prices for predictable budgeting.</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Starter</h3>
+                    <div class="price">$400</div>
+                    <p style="color: var(--secondary); margin-bottom: 1rem;">Perfect for new businesses</p>
+                    <ul class="features-list">
+                        <li>Single Page Website</li>
+                        <li>Mobile Responsive</li>
+                        <li>Contact Form</li>
+                        <li>Basic SEO Setup</li>
+                        <li>48-Hour Delivery</li>
+                        <li>1 Round of Revisions</li>
+                    </ul>
+                    <div class="timeline">⏱️ 2 days</div>
+                    <br><br>
+                    <a href="contact.html?package=starter" class="btn btn-primary">Choose Starter</a>
+                </div>
+
+                <div class="pricing-card featured">
+                    <h3>Business</h3>
+                    <div class="price">$600</div>
+                    <p style="color: var(--gray); margin-bottom: 1rem;">Most popular choice</p>
+                    <ul class="features-list">
+                        <li>Up to 5 Pages</li>
+                        <li>Custom Design</li>
+                        <li>CMS Integration</li>
+                        <li>Advanced SEO</li>
+                        <li>Speed Optimization</li>
+                        <li>2-Week Delivery</li>
+                        <li>3 Rounds of Revisions</li>
+                        <li>30 Days Support</li>
+                    </ul>
+                    <div class="timeline">⏱️ 2 weeks</div>
+                    <br><br>
+                    <a href="contact.html?package=business" class="btn btn-white">Choose Business</a>
+                </div>
+
+                <div class="pricing-card">
+                    <h3>E-Commerce</h3>
+                    <div class="price">$900+</div>
+                    <p style="color: var(--secondary); margin-bottom: 1rem;">Full online store</p>
+                    <ul class="features-list">
+                        <li>Full Online Store</li>
+                        <li>Payment Processing</li>
+                        <li>Inventory System</li>
+                        <li>User Accounts</li>
+                        <li>Admin Dashboard</li>
+                        <li>3-4 Week Delivery</li>
+                        <li>Unlimited Revisions</li>
+                        <li>60 Days Support</li>
+                    </ul>
+                    <div class="timeline">⏱️ 3-4 weeks</div>
+                    <br><br>
+                    <a href="contact.html?package=ecommerce" class="btn btn-primary">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section style="background: var(--gradient-hero); color: white; padding: 4rem 2rem; text-align: center;">
+        <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Not sure which package?</h2>
+        <p style="font-size: 1.25rem; opacity: 0.9; margin-bottom: 2rem;">Contact us for a free consultation. We will recommend the best solution for your needs.</p>
+        <a href="contact.html" class="btn btn-white">Get Free Consultation</a>
+    </section>
+<footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="https://www.reddit.com/user/VeloxoraWeb" class="reddit" target="_blank" aria-label="Reddit">
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+                        <path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/>
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/veloxoraweb" class="instagram" target="_blank" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                </a>
+                <a href="https://www.tiktok.com/@veloxora.web" class="tiktok" target="_blank" aria-label="TikTok">
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+                        <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
+                    </svg>
+                </a>
+            </div>
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Veloxora Web</h3>
+                    <p>Building fast, modern websites for small businesses. Professional results without the agency overhead.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="index.html">Home</a><br>
+                    <a href="services.html">Services</a><br>
+                    <a href="portfolio.html">Portfolio</a><br>
+                    <a href="about.html">About Us</a><br>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <a href="services.html">Landing Pages</a><br>
+                    <a href="services.html">Business Sites</a><br>
+                    <a href="services.html">E-Commerce</a><br>
+                    <a href="services.html">Custom Development</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <a href="mailto:veloxoraweb@gmail.com">veloxoraweb@gmail.com</a><br>
+                    <a href="contact.html">Get a Quote</a><br>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Veloxora Web. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
